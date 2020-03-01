@@ -5,7 +5,9 @@ class CoursesController < ApplicationController
 	helper_method :has_courses?
 
 	def index
-		@courses = Course.all
+		if has_courses?
+			@courses = Course.all
+		end
 	end
 
 	def new
